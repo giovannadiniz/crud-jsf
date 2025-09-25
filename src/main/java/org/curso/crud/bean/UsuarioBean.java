@@ -76,13 +76,13 @@ public class UsuarioBean {
         }
     }
 
-    // Verifica se logado, senão redireciona
+    
     public UsuarioBean() {
         if (FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("user") == null) {
             try {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
             } catch (Exception e) {
-                // Ignorar
+        
             }
         }
     }
