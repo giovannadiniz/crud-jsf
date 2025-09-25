@@ -20,11 +20,9 @@
         <param-name>primefaces.THEME</param-name>
         <param-value>saga</param-value>
     </context-param>
-    <!-- CDI Listener -->
     <listener>
         <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
     </listener>
-    <!-- Authentication Filter -->
     <filter>
         <filter-name>AuthFilter</filter-name>
         <filter-class>org.curso.crud.filter.AuthFilter</filter-class>
