@@ -20,7 +20,7 @@ import java.util.List;
 public class LoginBean implements Serializable {
     private String email;
     private String senha;
-    private String loggedUser; // Para armazenar o usuário logado
+    private String loggedUser;
 
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("crudPU");
 
@@ -41,7 +41,7 @@ public class LoginBean implements Serializable {
                 if (BCrypt.checkpw(senha, user.getSenha())) {
                     loggedUser = user.getEmail();
                     FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", loggedUser);
-                    return "index?faces-redirect=true"; // Redireciona para CRUD
+                    return "index?faces-redirect=true";
                 }
             }
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Login inválido", "Email ou senha incorretos"));
